@@ -16,7 +16,7 @@
     <visual>
       <origin xyz="-0.032 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ubuntu/project/turtlebot3_ws/src/auto_park/description/burger_base.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/description/burger_base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light_black"/>
     </visual>
@@ -48,7 +48,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ubuntu/project/turtlebot3_ws/src/auto_park/description/left_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/description/left_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -80,7 +80,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ubuntu/project/turtlebot3_ws/src/auto_park/description/right_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/description/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -142,7 +142,7 @@
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ubuntu/project/turtlebot3_ws/src/auto_park/description/lds.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/description/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dark"/>
     </visual>
@@ -402,7 +402,7 @@
 
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>/home/ubuntu/project/turtlebot3_ws/src/auto_park/config/controllers.yaml</parameters>
+      <parameters>/home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/config/controllers.yaml</parameters>
     </plugin>
   </gazebo>
 
