@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/project/turtlebot3_ws/build/auto_park -- -j16 -l16
+Invoked command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/project/turtlebot3_ws/build/auto_park -- -j16 -l16
+Invoking command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/project/turtlebot3_ws/build/auto_park
+Invoked command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/project/turtlebot3_ws/build/auto_park
