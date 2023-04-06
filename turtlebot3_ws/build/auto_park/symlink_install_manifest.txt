@@ -1,4 +1,6 @@
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/controllers.yaml
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/mapper_params_online_async.yaml
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/teleop.yaml
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/burger_base.stl
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/common_properties.xacro
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/lds.stl
@@ -12,6 +14,10 @@
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/launch/rsp.launch.py
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/empty.world
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_garage.world
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/scripts/parking_lot.material
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/textures/parking_lot.png
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.config
+/home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.sdf
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot1.world
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/package_run_dependencies/auto_park
 /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/parent_prefix_path/auto_park

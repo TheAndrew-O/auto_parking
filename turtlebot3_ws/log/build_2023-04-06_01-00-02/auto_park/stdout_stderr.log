@@ -1,0 +1,38 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/controllers.yaml
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/mapper_params_online_async.yaml
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/teleop.yaml
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/burger_base.stl
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/common_properties.xacro
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/lds.stl
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/left_tire.stl
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/right_tire.stl
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/robot.urdf.xacro
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/robot_control.xacro
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/turtlebot3_burger.gazebo.xacro
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/turtlebot3_burger.urdf.xacro
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/launch/launch_sim.launch.py
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/launch/rsp.launch.py
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/empty.world
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_garage.world
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/scripts/parking_lot.material
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/textures/parking_lot.png
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.config
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.sdf
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot1.world
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/package_run_dependencies/auto_park
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/parent_prefix_path/auto_park
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/path.sh
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/path.dsv
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.bash
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.sh
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.zsh
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.dsv
+-- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/package.dsv
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/packages/auto_park
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/cmake/auto_parkConfig.cmake
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/cmake/auto_parkConfig-version.cmake
+-- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/package.xml

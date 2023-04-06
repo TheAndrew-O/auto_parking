@@ -1,0 +1,42 @@
+[0.017s] Invoking command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/project/turtlebot3_ws/build/auto_park -- -j16 -l16
+[0.049s] Invoked command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/project/turtlebot3_ws/build/auto_park -- -j16 -l16
+[0.076s] Invoking command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/project/turtlebot3_ws/build/auto_park
+[0.082s] -- Install configuration: ""
+[0.082s] -- Execute custom install script
+[0.083s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/controllers.yaml
+[0.083s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/mapper_params_online_async.yaml
+[0.090s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/config/teleop.yaml
+[0.098s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/burger_base.stl
+[0.098s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/common_properties.xacro
+[0.098s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/lds.stl
+[0.099s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/left_tire.stl
+[0.099s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/right_tire.stl
+[0.099s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/robot.urdf.xacro
+[0.099s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/robot_control.xacro
+[0.099s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/turtlebot3_burger.gazebo.xacro
+[0.100s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/description/turtlebot3_burger.urdf.xacro
+[0.100s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/launch/launch_sim.launch.py
+[0.100s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/launch/rsp.launch.py
+[0.100s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/empty.world
+[0.100s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_garage.world
+[0.100s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/scripts/parking_lot.material
+[0.108s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/materials/textures/parking_lot.png
+[0.115s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.config
+[0.122s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot/model.sdf
+[0.129s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/worlds/parking_lot1.world
+[0.130s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/package_run_dependencies/auto_park
+[0.130s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/parent_prefix_path/auto_park
+[0.130s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/ament_prefix_path.sh
+[0.130s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/ament_prefix_path.dsv
+[0.131s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/path.sh
+[0.131s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/environment/path.dsv
+[0.131s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.bash
+[0.131s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.sh
+[0.131s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.zsh
+[0.132s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/local_setup.dsv
+[0.132s] -- Symlinking: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/package.dsv
+[0.139s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/ament_index/resource_index/packages/auto_park
+[0.139s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/cmake/auto_parkConfig.cmake
+[0.140s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/cmake/auto_parkConfig-version.cmake
+[0.140s] -- Up-to-date symlink: /home/ubuntu/project/turtlebot3_ws/install/auto_park/share/auto_park/package.xml
+[0.141s] Invoked command in '/home/ubuntu/project/turtlebot3_ws/build/auto_park' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/project/turtlebot3_ws/build/auto_park
