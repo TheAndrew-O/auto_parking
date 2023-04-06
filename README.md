@@ -26,6 +26,7 @@ pip install xacro
 ```
 ## Clone repo to VOLE
 ```
+cd
 git clone https://github.com/TheAndrew-O/auto_parking.git
 ```
 
