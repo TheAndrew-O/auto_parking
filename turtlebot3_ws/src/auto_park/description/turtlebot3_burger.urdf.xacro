@@ -362,12 +362,11 @@
           <far>8.0</far>
         </clip>
       </camera>
-      <plugin name="gazebo_ros_camera_controller" filename="libgazebo_ros_camera.so">
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <frame_name>camera_link_optic</frame_name>
         <topic_name>depth</topic_name>
         <min_depth>0.1</min_depth>
-        <max_depth>10.0</max_depth>
-        <output_type>sensor_msgs/PointCloud2</output_type>
+        <max_depth>50.0</max_depth>
         <!-- sensor_msgs/msg/PointCloud2 -->
       </plugin>
     </sensor>
@@ -397,13 +396,18 @@
       <state_interface name="velocity"/>
       <state_interface name="position"/>
     </joint>
-
+   
   </ros2_control>
 
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
       <parameters>/home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/config/controllers.yaml</parameters>
-    </plugin>
+      <!--  <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf> -->
+   </plugin>
   </gazebo>
 
 </robot>
