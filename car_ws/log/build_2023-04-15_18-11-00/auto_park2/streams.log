@@ -1,0 +1,73 @@
+[0.017s] Invoking command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake /home/ubuntu/auto_parking/car_ws/src/auto_park2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/auto_parking/car_ws/install/auto_park2
+[0.177s] -- The C compiler identification is GNU 9.4.0
+[0.282s] -- The CXX compiler identification is GNU 9.4.0
+[0.291s] -- Check for working C compiler: /usr/bin/cc
+[0.352s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.354s] -- Detecting C compiler ABI info
+[0.408s] -- Detecting C compiler ABI info - done
+[0.417s] -- Detecting C compile features
+[0.417s] -- Detecting C compile features - done
+[0.421s] -- Check for working CXX compiler: /usr/bin/c++
+[0.481s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.482s] -- Detecting CXX compiler ABI info
+[0.543s] -- Detecting CXX compiler ABI info - done
+[0.552s] -- Detecting CXX compile features
+[0.552s] -- Detecting CXX compile features - done
+[0.562s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.593s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.593s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.737s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.778s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.857s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.861s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.862s] -- Added test 'lint_cmake' to check CMake code style
+[0.863s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.866s] -- Added test 'xmllint' to check XML markup files
+[0.869s] -- Configuring done
+[0.874s] -- Generating done
+[0.875s] -- Build files have been written to: /home/ubuntu/auto_parking/car_ws/build/auto_park2
+[0.881s] Invoked command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake /home/ubuntu/auto_parking/car_ws/src/auto_park2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/auto_parking/car_ws/install/auto_park2
+[0.882s] Invoking command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/auto_parking/car_ws/build/auto_park2 -- -j16 -l16
+[0.912s] Invoked command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake --build /home/ubuntu/auto_parking/car_ws/build/auto_park2 -- -j16 -l16
+[0.936s] Invoking command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/auto_parking/car_ws/build/auto_park2
+[0.942s] -- Install configuration: ""
+[0.943s] -- Execute custom install script
+[0.944s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/config/controllers.yaml
+[0.951s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/Hybrid.png
+[0.957s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/Hybrid_Interior.png
+[0.964s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/Wheels3.png
+[0.970s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/hybrid_body.mtl
+[0.977s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/hybrid_body.obj
+[0.984s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/prius.urdf
+[0.991s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/prius.urdf.xacro
+[0.997s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/steering_wheel.mtl
+[1.004s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/steering_wheel.obj
+[1.010s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/wheel.mtl
+[1.017s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/description/wheel.obj
+[1.023s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/launch/.launch_sim.launch.py.swp
+[1.030s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/launch/launch_sim.launch.py
+[1.036s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/launch/rsp.launch.py
+[1.043s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/empty.world
+[1.049s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_garage.world
+[1.056s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot/materials/scripts/parking_lot.material
+[1.063s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot/materials/textures/parking_lot.png
+[1.070s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot/model.config
+[1.076s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot/model.sdf
+[1.083s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot1.world
+[1.089s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/worlds/parking_lot2.world
+[1.096s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/ament_index/resource_index/package_run_dependencies/auto_park2
+[1.103s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/ament_index/resource_index/parent_prefix_path/auto_park2
+[1.110s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/environment/ament_prefix_path.sh
+[1.118s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/environment/ament_prefix_path.dsv
+[1.125s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/environment/path.sh
+[1.132s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/environment/path.dsv
+[1.139s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/local_setup.bash
+[1.145s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/local_setup.sh
+[1.153s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/local_setup.zsh
+[1.160s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/local_setup.dsv
+[1.167s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/package.dsv
+[1.174s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/ament_index/resource_index/packages/auto_park2
+[1.181s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/cmake/auto_park2Config.cmake
+[1.187s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/cmake/auto_park2Config-version.cmake
+[1.194s] -- Symlinking: /home/ubuntu/auto_parking/car_ws/install/auto_park2/share/auto_park2/package.xml
+[1.203s] Invoked command in '/home/ubuntu/auto_parking/car_ws/build/auto_park2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/auto_parking/turtlebot3_ws/install/line_tracker:/home/ubuntu/auto_parking/turtlebot3_ws/install/ball_tracker:/opt/ros/foxy /usr/bin/cmake --install /home/ubuntu/auto_parking/car_ws/build/auto_park2

@@ -1,0 +1,1 @@
+/home/ubuntu/auto_parking/car_ws/build/auto_park2/ament_cmake_environment_hooks/local_setup.zsh

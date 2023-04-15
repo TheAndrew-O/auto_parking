@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot name="prius" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <link name="base_footprint">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="1.45 0 0" rpy="0 0 1.57"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <!-- chasis -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 1.45 -0.3" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/hybrid_body.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+
+    <collision name="chassis">
+      <origin xyz="0.0 0.05 0.625" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.7526 2.1 0.95"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1356.0"/>
+      <origin xyz="0 0 0.48" rpy="0 0 1.5708"/>
+      <inertia ixx="2581.13354740" ixy="0.0" ixz="0.0" 
+               iyy="591.30846112" iyz="0.0" 
+               izz="2681.95008628"/>
+    </inertial>
+  </link>
+  <!-- left_wheel -->
+  <joint name="wheel_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left_link"/>
+    <origin xyz="0.0 0.88 0.0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="wheel_left_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="11"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.58631238" ixy="0.0" ixz="0.0" iyy="0.33552910" iyz="0.0" izz="0.33552910"/>
+    </inertial>
+    <collision name="front_left_wheel_collision">
+      <geometry>
+        <sphere radius="0.31265"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- right_wheel -->
+  <joint name="wheel_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left_link"/>
+    <origin xyz="0.0 -0.88 0.0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="wheel_right_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="11"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.58631238" ixy="0.0" ixz="0.0" iyy="0.33552910" iyz="0.0" izz="0.33552910"/>
+    </inertial>
+    <collision name="front_right_wheel_collision">
+      <geometry>
+        <sphere radius="0.31265"/>
+      </geometry>
+    </collision>
+  </link>
+
+</robot>
