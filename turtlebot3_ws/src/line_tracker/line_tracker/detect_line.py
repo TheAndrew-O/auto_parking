@@ -18,11 +18,11 @@ class DetectLine(Node):
 
         self.declare_parameter("x_min",0)
         self.declare_parameter("x_max",100)
-        self.declare_parameter("y_min",32)
+        self.declare_parameter("y_min",18)
         self.declare_parameter("y_max",100)
-        self.declare_parameter("h_min",28)
-        self.declare_parameter("h_max",38)
-        self.declare_parameter("s_min",42)
+        self.declare_parameter("h_min",110)
+        self.declare_parameter("h_max",157)
+        self.declare_parameter("s_min",90)
         self.declare_parameter("s_max",255)
         self.declare_parameter("v_min",0)
         self.declare_parameter("v_max",255)
@@ -69,13 +69,17 @@ class DetectLine(Node):
             self.image_tuning_pub.publish(img_to_pub)
             point = Point()
             if lines is not None:
-                for line in lines:
-                    x1,y1,x2,y2 = line[0]
-                    self.get_logger().info(f"Pt: ({x1},{y1},{x2},{y2})")
-                    point.x = float(x2)
-                    point.y = float(y2)
-                    point.z = float(x1)
-                self.line_pub.publish(point)
+                for i, line in enumerate(lines):
+                    x = line.pt[0]
+                    y = line.pt[1]
+                    size = line.size
+                    self.get_logger().info(f"Pt: ({x},{y},{size})")
+                    if(size > point.z):
+                        point.x = float(x)
+                        point.y = float(y)
+                        point.z = float(size)
+                if(point.z > 0):
+                    self.line_pub.publish(point)
         except CvBridgeError as e:
             print(e)
 

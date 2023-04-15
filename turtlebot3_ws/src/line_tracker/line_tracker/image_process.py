@@ -34,24 +34,66 @@ def find_lines(image, tuning_params):
 
     # Make a copy of the image for tuning
     tuning_image = cv2.bitwise_and(image,image,mask = working_image)
-    out_image = cv2.bitwise_and(image, image, mask = working_image)
     # Apply the search window
     working_image = apply_search_window(working_image, search_window)
 
-    working_image = cv2.Canny(working_image, 50, 150, apertureSize=3)
+    # Invert the image to suit the blob detector
+    working_image = 255-working_image
 
-    lines = cv2.HoughLinesP(working_image, 1, np.pi/180, 200)
 
-    if lines is not None:
-        for line in lines:
-            x1,y1,x2,y2 = line[0]
-            cv2.line(out_image, (x1, y1), (x2, y2), (0, 0, 255), 2)
-            cv2.line(tuning_image, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
+    # Set up the SimpleBlobdetector with default parameters.
+    params = cv2.SimpleBlobDetector_Params()
+        
+    # Change thresholds
+    params.minThreshold = 0
+    params.maxThreshold = 100
+        
+    # Filter by Area.
+    params.filterByArea = True
+    params.minArea = 80
+    params.maxArea = 20000
+        
+    # Filter by Circularity
+    params.filterByCircularity = True
+    params.minCircularity = 0.1
+        
+    # Filter by Convexity
+    params.filterByConvexity = True
+    params.minConvexity = 0.5
+        
+    # Filter by Inertia
+    params.filterByInertia =True
+    params.minInertiaRatio = 0.001
+
+    detector = cv2.SimpleBlobDetector_create(params)
+
+    # Run detection!
+    keypoints = detector.detect(working_image)
+
+    size_min_px = tuning_params['sz_min']*working_image.shape[1]/100.0
+    size_max_px = tuning_params['sz_max']*working_image.shape[1]/100.0
+
+    keypoints = [k for k in keypoints if k.size > size_min_px and k.size < size_max_px]
+
+    
+    # Set up main output image
+    line_color=(0,0,255)
+
+    out_image = cv2.drawKeypoints(image, keypoints, np.array([]), line_color, cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
     out_image = draw_window2(out_image, search_window_px)
+
+    # Set up tuning output image
+    
+    tuning_image = cv2.drawKeypoints(tuning_image, keypoints, np.array([]), line_color, cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+    # tuning_image = draw_window(tuning_image, search_window)
+    # cv2.rectangle(image,(x_min_px,y_min_px),(x_max_px,y_max_px),color,line)
     tuning_image = draw_window2(tuning_image, search_window_px)
 
-    return lines, out_image, tuning_image
+
+    keypoints_normalised = [normalise_keypoint(working_image, k) for k in keypoints]
+
+    return keypoints_normalised, out_image, tuning_image
 
 def apply_search_window(image, window_adim=[0.0, 0.0, 1.0, 1.0]):
     rows = image.shape[0]
@@ -97,6 +139,16 @@ def convert_rect_perc_to_pixels(rect_perc, image):
     # y_max_px    = int(rows*window_adim[3])
     return [int(a*b/100) for a,b in zip(rect_perc, scale)]
 
+def normalise_keypoint(cv_image, kp):
+    rows = float(cv_image.shape[0])
+    cols = float(cv_image.shape[1])
+    # print(rows, cols)
+    center_x    = 0.5*cols
+    center_y    = 0.5*rows
+    # print(center_x)
+    x = (kp.pt[0] - center_x)/(center_x)
+    y = (kp.pt[1] - center_y)/(center_y)
+    return cv2.KeyPoint(x, y, kp.size/cv_image.shape[1])
 
 def create_tuning_window(initial_values):
     cv2.namedWindow("Tuning", 0)

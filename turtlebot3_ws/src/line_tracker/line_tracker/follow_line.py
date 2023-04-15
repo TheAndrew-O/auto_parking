@@ -1,16 +1,4 @@
-# Copyright 2023 Josh Newans
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+
 
 import rclpy
 from rclpy.node import Node
@@ -31,10 +19,10 @@ class FollowLine(Node):
 
 
         self.declare_parameter("rcv_timeout_secs", 1.0)
-        self.declare_parameter("angular_chase_multiplier", 0.7)
+        self.declare_parameter("angular_chase_multiplier", 0.3)
         self.declare_parameter("forward_chase_speed", 0.1)
         self.declare_parameter("search_angular_speed", 0.5)
-        self.declare_parameter("max_size_thresh", 0.1)
+        self.declare_parameter("max_size_thresh", 0.96)
         self.declare_parameter("filter_value", 0.9)
 
 
@@ -56,8 +44,9 @@ class FollowLine(Node):
         msg = Twist()
         if (time.time() - self.lastrcvtime < self.rcv_timeout_secs):
             self.get_logger().info('Target: {}'.format(self.target_val))
-            print(self.target_dist)
+            print("dist:",self.target_dist)
             if (self.target_dist < self.max_size_thresh):
+                print("forward")
                 msg.linear.x = self.forward_chase_speed
             msg.angular.z = -self.angular_chase_multiplier*self.target_val
         else:
@@ -67,15 +56,15 @@ class FollowLine(Node):
 
     def listener_callback(self, msg):
         f = self.filter_value
-        self.target_val = self.target_val * f + msg.x * (1-f)
-        self.target_dist = self.target_dist * f + msg.z * (1-f)
+        self.target_val = self.target_val * f + msg.x
+        self.target_dist = self.target_dist * f + msg.z
         self.lastrcvtime = time.time()
         # self.get_logger().info('Received: {} {}'.format(msg.x, msg.y))
 
 
 def main(args=None):
     rclpy.init(args=args)
-    follow_line = FollowLine()
-    rclpy.spin(follow_line)
-    follow_line.destroy_node()
+    follow_lines = FollowLine()
+    rclpy.spin(follow_lines)
+    follow_lines.destroy_node()
     rclpy.shutdown()

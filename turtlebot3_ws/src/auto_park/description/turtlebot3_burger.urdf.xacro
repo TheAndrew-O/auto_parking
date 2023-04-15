@@ -190,7 +190,7 @@
   <joint name="camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link"/>
-    <origin xyz="-0.089 0 0.1144" rpy="0 0.18 ${pi}"/>
+    <origin xyz="0.029 0 0.1147" rpy="0 0.18 0"/>
   </joint>
 
   <link name="camera_link">
@@ -402,11 +402,11 @@
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
       <parameters>/home/ubuntu/auto_parking/turtlebot3_ws/src/auto_park/config/controllers.yaml</parameters>
-      <!--  <odometry_frame>odom</odometry_frame>
+      <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf> -->
+      <publish_wheel_tf>true</publish_wheel_tf>
    </plugin>
   </gazebo>
 
