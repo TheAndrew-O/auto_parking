@@ -16,9 +16,9 @@ diff_drive_controller:
 
     base_frame_id: base_footprint
 
-    left_wheel_names: ['front_left_wheel_joint']
-    right_wheel_names: ['front_right_wheel_joint']
-    wheel_separation: 1.7
+    left_wheel_names: ['wheel_left_joint']
+    right_wheel_names: ['wheel_right_joint']
+    wheel_separation: 1.6
     wheel_radius: 0.31265
 
     use_stamped_vel: false

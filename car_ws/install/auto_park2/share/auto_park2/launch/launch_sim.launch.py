@@ -1,1 +1,0 @@
-/home/ubuntu/auto_parking/car_ws/src/auto_park2/launch/launch_sim.launch.py
