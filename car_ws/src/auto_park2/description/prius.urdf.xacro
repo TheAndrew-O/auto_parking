@@ -132,11 +132,12 @@
     </inertial>
   </link>
 
-  <joint name="front_left_steer_joint" type="fixed">
+  <joint name="front_left_steer_joint" type="revolute">
     <parent link="base_link"/>
     <child link="fl_axle"/>
     <origin xyz="0.8 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
+    <limit effort="100.0" velocity="10.0" lower="-0.8727" upper="0.8727"/>
   </joint>
 
   <!-- front right_wheel -->
@@ -176,11 +177,12 @@
     </inertial>
   </link>
 
-  <joint name="front_right_steer_joint" type="fixed">
+  <joint name="front_right_steer_joint" type="revolute">
     <parent link="base_link"/>
     <child link="fr_axle"/>
     <origin xyz="-0.8 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
+    <limit effort="100.0" velocity="10.0" lower="-0.8727" upper="0.8727"/>
   </joint>
 
   <!-- rear left_wheel -->
@@ -256,9 +258,9 @@
   </link>
 
   <joint name="scan_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="front_camera_link"/>
     <child link="base_scan"/>
-    <origin xyz="0 0.5 1.125" rpy="0 0 -1.5707"/>
+    <origin xyz="0.53 0.0 -0.3" rpy="0 0 0"/>
   </joint>
 
   <!-- front camera -->
@@ -509,8 +511,8 @@
           <horizontal>
             <samples>360</samples>
             <resolution>1</resolution>
-            <min_angle>-1.8</min_angle>
-            <max_angle>1.8</max_angle>
+            <min_angle>-1.72</min_angle>
+            <max_angle>1.72</max_angle>
           </horizontal>
         </scan>
         <range>
@@ -579,6 +581,26 @@
       </command_interface>
       <state_interface name="velocity"/>
       <state_interface name="position"/>
+    </joint>
+
+    <joint name="front_left_steer_joint">
+      <command_interface name="position">
+        <param name="min">-0.8727</param>
+        <param name="max">0.8727</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="effort" />
+    </joint>
+
+    <joint name="front_right_steer_joint">
+      <command_interface name="position">
+        <param name="min">-0.8727</param>
+        <param name="max">0.8727</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="effort" />
     </joint>
    
   </ros2_control>
