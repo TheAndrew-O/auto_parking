@@ -19,7 +19,7 @@
     <visual>
       <origin xyz="0 1.42 -0.3" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/andrew/auto_parking/car_ws/src/auto_park2/description/hybrid_body.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/hybrid_body.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="light_black"/>
     </visual>
@@ -27,63 +27,63 @@
     <collision name="chassis">
       <origin xyz="0.0 0.05 0.625" rpy="0 0 0"/>
       <geometry>
-        <box size="1.7526 2.1 0.95"/>
+        <box size="1 0.9 0.75"/>
       </geometry>
     </collision>
 
     <collision name="front_bumper">
       <origin xyz="0.0 -2.0 0.458488" rpy="0.0 0 0"/>
       <geometry>
-        <box size="1.337282 0.48 0.566691"/>
+        <box size="0.337282 0.28 0.266691"/>
       </geometry>
     </collision>
 
     <collision name="hood">
       <origin xyz="0.0 -1.900842 0.676305" rpy="0.341247 0 0"/>
       <geometry>
-        <box size="1.597968 0.493107 0.265468"/>
+        <box size="0.397968 0.293107 0.165468"/>
       </geometry>
     </collision>
 
     <collision name="windshield">
       <origin xyz="0.0 -0.875105 1.032268" rpy="0.335476 0 0"/>
       <geometry>
-        <box size="1.168381 1.654253 0.272347"/>
+        <box size="0.168381 0.654253 0.272347"/>
       </geometry>
     </collision>
 
     <collision name="top_front">
       <origin xyz="0.0 0.161236 1.386042" rpy="0.135030 0 0"/>
       <geometry>
-        <box size="1.279154 0.625988 0.171868"/>
+        <box size="0.279154 0.625988 0.171868"/>
       </geometry>
     </collision>
 
     <collision name="top_rear">
       <origin xyz="0.0 0.817696 1.360069" rpy="-0.068997 0 0"/>
       <geometry>
-        <box size="1.285130 0.771189 0.226557"/>
+        <box size="0.285130 0.771189 0.226557"/>
       </geometry>
     </collision>
 
     <collision name="rear_window">
       <origin xyz="0.0 1.640531 1.175126" rpy="-0.262017 0 0"/>
       <geometry>
-        <box size="1.267845 1.116344 0.244286"/>
+        <box size="0.267845 0.116344 0.244286"/>
       </geometry>
     </collision>
 
     <collision name="trunk">
       <origin xyz="0.0 1.637059 0.888180" rpy="0.0 0 0"/>
       <geometry>
-        <box size="1.788064 1.138988 0.482746"/>
+        <box size="0.788064 0.138988 0.482746"/>
       </geometry>
     </collision>
 
     <collision name="back_bumper">
       <origin xyz="0.0 2.054454 0.577870" rpy="0.0 0 0"/>
       <geometry>
-        <box size="1.781650 0.512093 0.581427"/>
+        <box size="0.781650 0.512093 0.581427"/>
       </geometry>
     </collision>
 
@@ -108,7 +108,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/andrew/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
@@ -153,7 +153,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/andrew/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
@@ -197,7 +197,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/andrew/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
@@ -225,7 +225,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/andrew/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
+        <mesh filename="file:///home/ubuntu/auto_parking/car_ws/src/auto_park2/description/wheel.obj" scale="0.01 0.01 0.01"/>
       </geometry>
     </visual>
 
@@ -342,7 +342,7 @@
   <joint name="left_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="left_camera_link"/>
-    <origin xyz="0.7 -0.63 0.5" rpy="0 0.05 -1.0"/>
+    <origin xyz="0.7 -0.63 0.5" rpy="0 0.05 -0.65"/>
   </joint>
   <link name="left_camera_link_optical">
     <inertial>
@@ -372,7 +372,7 @@
   <joint name="right_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="right_camera_link"/>
-    <origin xyz="-0.7 -0.63 0.5" rpy="0 0.05 -2.1416"/>
+    <origin xyz="-0.7 -0.63 0.5" rpy="0 0.05 -2.4916"/>
   </joint>
   <link name="right_camera_link_optical">
     <inertial>
@@ -392,7 +392,7 @@
     <sensor type="camera" name="front_camera_sensor">
       <update_rate>30.0</update_rate>
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <camera name="front_camera">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
@@ -504,7 +504,7 @@
     <material>Gazebo/FlatBlack</material>
     <sensor type="ray" name="lds_lfcd_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <update_rate>10</update_rate>
       <ray>
         <scan>
@@ -607,7 +607,7 @@
 
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>/home/andrew/auto_parking/car_ws/src/auto_park2/config/controllers.yaml</parameters>
+      <parameters>/home/ubuntu/auto_parking/car_ws/src/auto_park2/config/controllers.yaml</parameters>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <publish_odom>true</publish_odom>
