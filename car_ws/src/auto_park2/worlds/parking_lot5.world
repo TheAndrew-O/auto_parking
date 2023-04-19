@@ -45,7 +45,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>19.9999 20 0.1</size>
+              <size>19.9999 20 0.100001</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -66,7 +66,7 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>19.9999 20 0.1</size>
+              <size>19.9999 20 0.100001</size>
             </box>
           </geometry>
           <material>
@@ -81,7 +81,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>10.0416 2.3067 0 0 -0 0</pose>
+      <pose>13.6239 -0.043309 0 0 -0 0</pose>
     </model>
     <model name='parking_lot'>
       <static>1</static>
@@ -130,7 +130,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>10.5861 -5.31981 0 0 -0 0</pose>
+      <pose>11.1011 -6.40204 0 0 -0 0</pose>
     </model>
     <model name='parking_lot_0'>
       <static>1</static>
@@ -179,10 +179,10 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>10.5402 5.08892 0 0 -0 0</pose>
+      <pose>11.0818 6.36146 0 0 -0 0</pose>
     </model>
-    <model name='redwalls'>
-      <pose>9.03329 -0.203291 0 0 -0 0</pose>
+    <model name='largerWalls'>
+      <pose>9.3017 -0.04677 0 0 -0 0</pose>
       <link name='Wall_0'>
         <collision name='Wall_0_Collision'>
           <geometry>
@@ -223,7 +223,52 @@
             <layer>0</layer>
           </meta>
         </visual>
-        <pose>1.53329 -7.675 0 0 -0 0</pose>
+        <pose>1.8017 -8.925 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_2'>
+        <collision name='Wall_2_Collision'>
+          <geometry>
+            <box>
+              <size>18 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_2_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>18 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>0.666667 0 0 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>9.22669 0 0 0 -0 1.5708</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -232,7 +277,7 @@
         <collision name='Wall_4_Collision'>
           <geometry>
             <box>
-              <size>15.5 0.15 2.5</size>
+              <size>15 0.15 2.5</size>
             </box>
           </geometry>
           <pose>0 0 1.25 0 -0 0</pose>
@@ -254,51 +299,6 @@
           <pose>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>15.5 0.15 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>0.666667 0 0 1</ambient>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-        </visual>
-        <pose>8.95829 0 0 0 -0 1.5708</pose>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <link name='Wall_5'>
-        <collision name='Wall_5_Collision'>
-          <geometry>
-            <box>
-              <size>15 0.15 2.5</size>
-            </box>
-          </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_5_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
               <size>15 0.15 2.5</size>
             </box>
           </geometry>
@@ -313,7 +313,7 @@
             <layer>0</layer>
           </meta>
         </visual>
-        <pose>1.53329 7.675 0 0 -0 3.14159</pose>
+        <pose>1.8017 8.925 0 0 -0 3.14159</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -321,7 +321,7 @@
       <static>1</static>
     </model>
     <model name='prius_hybrid'>
-      <pose>5.71195 4.89176 0.03 0 -0 0</pose>
+      <pose>6.24151 5.88331 0.03 0 -0 0</pose>
       <link name='chassis'>
         <inertial>
           <mass>1326</mass>
@@ -1024,7 +1024,7 @@
       </joint>
     </model>
     <model name='prius_hybrid_0'>
-      <pose>12.9247 4.93893 0.03 0 -0 0</pose>
+      <pose>8.59435 -6.39041 0.03 0 -0 0</pose>
       <link name='chassis'>
         <inertial>
           <mass>1326</mass>
@@ -1727,7 +1727,7 @@
       </joint>
     </model>
     <model name='prius_hybrid_1'>
-      <pose>5.76817 -5.28007 0.03 0 -0 0</pose>
+      <pose>13.4683 -6.48089 0.03 0 -0 0</pose>
       <link name='chassis'>
         <inertial>
           <mass>1326</mass>
@@ -2430,7 +2430,7 @@
       </joint>
     </model>
     <model name='prius_hybrid_2'>
-      <pose>10.5224 -5.34846 0.03 0 -0 0</pose>
+      <pose>13.6007 6.00089 0.03 0 -0 0</pose>
       <link name='chassis'>
         <inertial>
           <mass>1326</mass>
@@ -3133,254 +3133,254 @@
       </joint>
     </model>
     <state world_name='default'>
-      <sim_time>995 428000000</sim_time>
-      <real_time>13 842283131</real_time>
-      <wall_time>1681942601 116694445</wall_time>
-      <iterations>12943</iterations>
+      <sim_time>513 394000000</sim_time>
+      <real_time>52 461289030</real_time>
+      <wall_time>1681948572 297654271</wall_time>
+      <iterations>45442</iterations>
       <model name='asphalt_plane'>
-        <pose>10.5518 -0.123569 -0.026377 0 -0 0</pose>
-        <scale>0.747287 0.276114 1</scale>
+        <pose>11.1842 -0.043309 0 0 -0 0</pose>
+        <scale>0.761078 0.393939 0.215757</scale>
         <link name='link'>
-          <pose>10.5518 -0.123569 -0.026377 0 -0 0</pose>
+          <pose>11.1842 -0.043309 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='green_marker'>
-        <pose>10.3886 6.39152 0 0 -0 0</pose>
+      <model name='largerWalls'>
+        <pose>9.3017 -0.04677 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>10.3886 6.39152 0 0 -0 0</pose>
+        <link name='Wall_0'>
+          <pose>11.1034 -8.97177 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_2'>
+          <pose>18.5284 -0.04677 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_4'>
+          <pose>11.1034 8.87823 0 0 -0 3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='park_marker'>
+        <pose>11.0617 8.67502 0.02999 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>11.0617 8.67502 0.02999 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='parking_lot'>
-        <pose>10.5861 -5.31981 0 0 -0 0</pose>
+        <pose>11.1011 -6.40204 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>10.5861 -5.31981 0 0 -0 0</pose>
+          <pose>11.1011 -6.40204 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='parking_lot_0'>
-        <pose>10.5402 5.08892 0 0 -0 0</pose>
+        <pose>11.0818 6.36146 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>10.5402 5.08892 0 0 -0 0</pose>
+          <pose>11.0818 6.36146 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='prius_hybrid'>
-        <pose>5.7186 4.88184 0.01164 -2e-06 0 0.004559</pose>
+        <pose>6.24442 5.879 0.01164 -2e-06 -0 0.002</pose>
         <scale>1 1 1</scale>
         <link name='chassis'>
-          <pose>5.7186 4.88184 0.01164 -2e-06 0 0.004559</pose>
-          <velocity>1.5e-05 -2.2e-05 5e-06 -1e-06 -0 1e-05</velocity>
-          <acceleration>-0 0 -0 -1e-06 0 0</acceleration>
-          <wrench>-1.5e-05 1.6e-05 -0 0 -0 0</wrench>
+          <pose>6.24442 5.879 0.01164 -2e-06 -0 0.002</pose>
+          <velocity>1.4e-05 -2.1e-05 5e-06 -1e-06 -0 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>8e-06 -1.1e-05 0 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>6.48502 3.47532 0.31165 0.02909 0.035884 0.427362</pose>
-          <velocity>2.9e-05 -1.4e-05 1.7e-05 4.5e-05 9.2e-05 0.000828</velocity>
-          <acceleration>-0 0 0 -0 -0 -1e-06</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
+          <pose>7.00724 4.47053 0.31165 0.010719 0.017309 0.201168</pose>
+          <velocity>2.7e-05 -1.4e-05 1.7e-05 4.4e-05 8.7e-05 0.000906</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>4.96504 3.46839 0.31165 0.050134 0.032011 0.37927</pose>
-          <velocity>2.9e-05 -2.9e-05 1.7e-05 9.4e-05 9.3e-05 0.000636</velocity>
-          <acceleration>-0 0 -0 -0 -0 -1e-06</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
+          <pose>5.48724 4.46749 0.31165 0.02029 0.016353 0.190035</pose>
+          <velocity>2.7e-05 -2.8e-05 1.7e-05 9e-05 8.8e-05 0.00081</velocity>
+          <acceleration>0 -0 -0 0 -0 -1e-06</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>5.71199 6.33182 0.311636 -2e-06 -6e-06 0.004559</pose>
-          <velocity>0 -2.2e-05 3e-06 -1e-06 -4e-06 1e-05</velocity>
-          <acceleration>-0 0 -0 -0.006939 -3.1e-05 -0</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
+          <pose>6.24152 7.329 0.311636 -2e-06 -6e-06 0.002</pose>
+          <velocity>0 -2.1e-05 3e-06 -1e-06 -4e-06 9e-06</velocity>
+          <acceleration>0 -0 0 -0.00309 -6e-06 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>6.49798 6.3354 0.31165 0.020297 -1e-06 0.004559</pose>
-          <velocity>0 -1.4e-05 1.3e-05 4.5e-05 -0 1e-05</velocity>
-          <acceleration>-0 0 -0 0 -0 0</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
+          <pose>7.02752 7.33057 0.31165 0.008752 -4e-06 0.002</pose>
+          <velocity>-0 -1.4e-05 1.3e-05 4.3e-05 -0 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>4.926 6.32824 0.31165 0.043276 1e-05 0.004559</pose>
-          <velocity>1e-06 -3e-05 1.3e-05 9.6e-05 3e-06 1e-05</velocity>
-          <acceleration>0 0 -0 -0 -0 -0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <pose>5.45552 7.32743 0.31165 0.018816 1.3e-05 0.002</pose>
+          <velocity>1e-06 -2.8e-05 1.3e-05 9.1e-05 3e-06 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose>6.07719 4.25613 0.997956 -0.001006 1.30202 1.5744</pose>
-          <velocity>2.1e-05 -1.8e-05 5e-06 -1e-06 5e-06 1.1e-05</velocity>
-          <acceleration>-0 0 -0 0 6e-06 0</acceleration>
-          <wrench>-0 0 -0 0 -0 0</wrench>
+          <pose>6.60148 5.25238 0.997957 -0.125208 1.29985 1.44299</pose>
+          <velocity>1.9e-05 -1.7e-05 5e-06 -2e-06 0.000633 0.000184</velocity>
+          <acceleration>0 -0 0 -2e-06 0.000821 2.7e-05</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='prius_hybrid_0'>
-        <pose>13.0035 4.94872 0.01164 -2e-06 -0 -3.12664</pose>
+        <pose>8.59184 -6.38655 0.01164 -2e-06 0 -3.12577</pose>
         <scale>1 1 1</scale>
         <link name='chassis'>
-          <pose>13.0035 4.94872 0.01164 -2e-06 -0 -3.12664</pose>
-          <velocity>-1.5e-05 2.4e-05 5e-06 1e-06 -0 9e-06</velocity>
-          <acceleration>0 -0 -0 2e-06 -0 0</acceleration>
-          <wrench>1.4e-05 -0.000104 -1e-06 0 -0 0</wrench>
-        </link>
-        <link name='front_left_wheel'>
-          <pose>12.2225 6.3472 0.31165 0.026459 0.033548 -2.73296</pose>
-          <velocity>-2.8e-05 1.6e-05 1.7e-05 -5.1e-05 -8.9e-05 0.000767</velocity>
-          <acceleration>0 -0 0 0 -0 0</acceleration>
-          <wrench>0 -1e-06 0 0 -0 0</wrench>
-        </link>
-        <link name='front_right_wheel'>
-          <pose>13.7424 6.36993 0.31165 0.045698 0.029676 -2.78049</pose>
-          <velocity>-2.8e-05 3.1e-05 1.7e-05 -9.8e-05 -9e-05 0.000605</velocity>
-          <acceleration>0 -0 -0 0 -0 0</acceleration>
-          <wrench>0 -1e-06 -0 0 -0 0</wrench>
-        </link>
-        <link name='rear_axle'>
-          <pose>13.0252 3.49889 0.311635 -2e-06 -6e-06 -3.12664</pose>
-          <velocity>-1e-06 2.4e-05 3e-06 1e-06 4e-06 9e-06</velocity>
-          <acceleration>0 -0 -0 0.021208 0.000311 0</acceleration>
-          <wrench>0 -2e-06 -0 0 -0 0</wrench>
-        </link>
-        <link name='rear_left_wheel'>
-          <pose>12.2393 3.48714 0.31165 0.018906 1.6e-05 -3.12664</pose>
-          <velocity>-0 1.6e-05 1.3e-05 -5.2e-05 -0 9e-06</velocity>
-          <acceleration>0 -0 -0 0 -0 0</acceleration>
-          <wrench>0 -1e-06 -0 0 -0 0</wrench>
-        </link>
-        <link name='rear_right_wheel'>
-          <pose>13.8111 3.51063 0.31165 0.039932 -6e-06 -3.12664</pose>
-          <velocity>-1e-06 3.1e-05 1.3e-05 -0.0001 -5e-06 9e-06</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -1e-06 -0 0 -0 0</wrench>
-        </link>
-        <link name='steering_wheel'>
-          <pose>12.6384 5.57067 0.997956 -0.001184 1.30202 -1.55699</pose>
-          <velocity>-2e-05 2e-05 5e-06 1e-06 -6e-06 1.1e-05</velocity>
-          <acceleration>0 -0 -0 0 -7e-06 0</acceleration>
-          <wrench>0 -0 -0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='prius_hybrid_1'>
-        <pose>5.76274 -5.27146 0.01164 -2e-06 -0 -3.11138</pose>
-        <scale>1 1 1</scale>
-        <link name='chassis'>
-          <pose>5.76274 -5.27146 0.01164 -2e-06 -0 -3.11138</pose>
+          <pose>8.59184 -6.38655 0.01164 -2e-06 0 -3.12577</pose>
           <velocity>-1.4e-05 2.1e-05 5e-06 1e-06 -0 9e-06</velocity>
-          <acceleration>0 0 0 5e-06 -1e-06 0</acceleration>
-          <wrench>7e-06 1.1e-05 0 0 -0 0</wrench>
+          <acceleration>-0 0 -0 3e-06 -0 0</acceleration>
+          <wrench>-5e-06 4e-06 -0 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>4.96049 -3.88506 0.31165 0.025208 0.029212 -2.77085</pose>
-          <velocity>-2.6e-05 1.4e-05 1.7e-05 -4.5e-05 -8.4e-05 0.000758</velocity>
-          <acceleration>0 0 -0 0 0 -1e-06</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <pose>7.80962 -4.98876 0.31165 0.010231 0.015494 -2.94773</pose>
+          <velocity>-2.6e-05 1.4e-05 1.7e-05 -4.4e-05 -8.3e-05 0.00086</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>6.4798 -3.83914 0.31165 0.042306 0.026586 -2.80255</pose>
-          <velocity>-2.7e-05 2.8e-05 1.7e-05 -8.8e-05 -8.5e-05 0.000616</velocity>
-          <acceleration>0 0 0 0 0 -1e-06</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>9.32943 -4.96471 0.31165 0.018867 0.014761 -2.95623</pose>
+          <velocity>-2.6e-05 2.7e-05 1.7e-05 -8.7e-05 -8.4e-05 0.000778</velocity>
+          <acceleration>-0 0 -0 0 0 -1e-06</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>5.80655 -6.7208 0.311636 -2e-06 -6e-06 -3.11138</pose>
-          <velocity>-1e-06 2.2e-05 3e-06 1e-06 4e-06 9e-06</velocity>
-          <acceleration>-0 0 0 0.046813 0.001389 0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
+          <pose>8.61478 -7.83637 0.311636 -2e-06 -6e-06 -3.12577</pose>
+          <velocity>-1e-06 2.1e-05 3e-06 1e-06 4e-06 9e-06</velocity>
+          <acceleration>-0 0 -0 0.024318 0.000378 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>5.0209 -6.74454 0.31165 0.019446 -5e-06 -3.11138</pose>
-          <velocity>-0 1.5e-05 1.3e-05 -4.7e-05 -1e-06 9e-06</velocity>
-          <acceleration>-0 0 0 0 -0 0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='rear_right_wheel'>
-          <pose>6.59219 -6.69705 0.31165 0.037811 1.4e-05 -3.11138</pose>
-          <velocity>-2e-06 2.9e-05 1.3e-05 -9.1e-05 -5e-06 9e-06</velocity>
-          <acceleration>-0 0 0 -0 -0 -0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
-        </link>
-        <link name='steering_wheel'>
-          <pose>5.38822 -4.65515 0.997956 -0.002224 1.30202 -1.5428</pose>
-          <velocity>-1.9e-05 1.7e-05 5e-06 1e-06 -1.1e-05 1.2e-05</velocity>
-          <acceleration>0 0 -0 0 -1.4e-05 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='prius_hybrid_2'>
-        <pose>10.528 -5.35683 0.01164 -2e-06 0 0.00387</pose>
-        <scale>1 1 1</scale>
-        <link name='chassis'>
-          <pose>10.528 -5.35683 0.01164 -2e-06 0 0.00387</pose>
-          <velocity>1.5e-05 -2.3e-05 5e-06 -1e-06 -0 1e-05</velocity>
-          <acceleration>-0 0 -0 -1e-06 0 0</acceleration>
-          <wrench>-3.7e-05 3.2e-05 -0 0 -0 0</wrench>
-        </link>
-        <link name='front_left_wheel'>
-          <pose>11.2935 -6.76388 0.31165 0.023448 0.030993 0.366093</pose>
-          <velocity>2.9e-05 -1.4e-05 1.7e-05 4.6e-05 9.4e-05 0.000881</velocity>
-          <acceleration>-0 0 0 -0 -0 -2e-06</acceleration>
-          <wrench>-1e-06 0 0 0 -0 0</wrench>
-        </link>
-        <link name='front_right_wheel'>
-          <pose>9.77349 -6.76976 0.31165 0.041686 0.028316 0.333537</pose>
-          <velocity>3e-05 -3e-05 1.7e-05 9.6e-05 9.4e-05 0.000704</velocity>
-          <acceleration>-0 0 -0 -0 -0 -2e-06</acceleration>
-          <wrench>-1e-06 0 -0 0 -0 0</wrench>
-        </link>
-        <link name='rear_axle'>
-          <pose>10.5224 -3.90684 0.311636 -2e-06 -6e-06 0.00387</pose>
-          <velocity>0 -2.2e-05 3e-06 -1e-06 -4e-06 1e-05</velocity>
-          <acceleration>-0 0 -0 -0.005807 -2.2e-05 0</acceleration>
-          <wrench>-0 1e-06 -0 0 -0 0</wrench>
-        </link>
-        <link name='rear_left_wheel'>
-          <pose>11.3084 -3.9038 0.31165 0.017074 3e-06 0.00387</pose>
-          <velocity>0 -1.4e-05 1.3e-05 4.6e-05 -0 1e-05</velocity>
+          <pose>7.82888 -7.84881 0.31165 0.008654 -3e-06 -3.12577</pose>
+          <velocity>-0 1.4e-05 1.3e-05 -4.5e-05 0 9e-06</velocity>
           <acceleration>-0 0 -0 0 -0 0</acceleration>
           <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>9.73642 -3.90988 0.31165 0.036534 6e-06 0.00387</pose>
-          <velocity>1e-06 -3e-05 1.3e-05 9.7e-05 3e-06 1e-05</velocity>
-          <acceleration>0 0 -0 -0 -0 -0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
-        </link>
-        <link name='steering_wheel'>
-          <pose>10.8862 -5.98278 0.997956 -0.003806 1.30202 1.57081</pose>
-          <velocity>2.1e-05 -1.8e-05 5e-06 -1e-06 1.9e-05 1.5e-05</velocity>
-          <acceleration>-0 0 -0 0 2.4e-05 1e-06</acceleration>
+          <pose>9.40068 -7.82394 0.31165 0.017678 1.2e-05 -3.12577</pose>
+          <velocity>-1e-06 2.8e-05 1.3e-05 -9e-05 -4e-06 9e-06</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
           <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
+        <link name='steering_wheel'>
+          <pose>8.22614 -5.76493 0.997957 -0.153274 1.29875 -1.71392</pose>
+          <velocity>-1.8e-05 1.7e-05 5e-06 1.3e-05 -0.000777 0.000223</velocity>
+          <acceleration>-0 0 0 1.6e-05 -0.001008 3.4e-05</acceleration>
+          <wrench>-0 0 0 0 -0 0</wrench>
+        </link>
       </model>
-      <model name='redwalls'>
-        <pose>9.03331 -0.20329 0 0 -0 0</pose>
+      <model name='prius_hybrid_1'>
+        <pose>13.4707 -6.48439 0.01164 -2e-06 -0 0.001621</pose>
         <scale>1 1 1</scale>
-        <link name='Wall_0'>
-          <pose>10.5666 -7.87829 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+        <link name='chassis'>
+          <pose>13.4707 -6.48439 0.01164 -2e-06 -0 0.001621</pose>
+          <velocity>1.4e-05 -2.1e-05 5e-06 -1e-06 -0 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>7e-06 -1.1e-05 0 0 -0 0</wrench>
         </link>
-        <link name='Wall_4'>
-          <pose>17.9916 -0.203291 0 0 -0 1.5708</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+        <link name='front_left_wheel'>
+          <pose>14.2329 -7.89315 0.31165 0.008444 0.014297 0.165776</pose>
+          <velocity>2.7e-05 -1.3e-05 1.7e-05 4.3e-05 8.7e-05 0.000919</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
         </link>
-        <link name='Wall_5'>
-          <pose>10.5666 7.47171 0 0 -0 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+        <link name='front_right_wheel'>
+          <pose>12.7129 -7.89562 0.31165 0.016266 0.013688 0.158723</pose>
+          <velocity>2.7e-05 -2.8e-05 1.7e-05 8.9e-05 8.7e-05 0.000838</velocity>
+          <acceleration>0 -0 0 0 -0 -1e-06</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='rear_axle'>
+          <pose>13.4683 -5.03439 0.311636 -2e-06 -6e-06 0.001621</pose>
+          <velocity>0 -2.1e-05 3e-06 -1e-06 -4e-06 9e-06</velocity>
+          <acceleration>0 -0 0 -0.002503 -4e-06 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='rear_left_wheel'>
+          <pose>14.2543 -5.03311 0.31165 0.007112 -4e-06 0.001621</pose>
+          <velocity>-0 -1.3e-05 1.3e-05 4.3e-05 -0 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='rear_right_wheel'>
+          <pose>12.6823 -5.03566 0.31165 0.015273 1.3e-05 0.001621</pose>
+          <velocity>1e-06 -2.8e-05 1.3e-05 9e-05 2e-06 9e-06</velocity>
+          <acceleration>0 -0 0 0 -0 0</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='steering_wheel'>
+          <pose>13.8276 -7.11114 0.997961 -0.257798 1.2926 1.30488</pose>
+          <velocity>1.7e-05 -1.7e-05 5e-06 -3e-06 0.001326 0.000375</velocity>
+          <acceleration>0 -0 0 -3e-06 0.001721 5.8e-05</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='prius_hybrid_2'>
+        <pose>13.5989 6.0042 0.01164 -2e-06 0 -3.12341</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose>13.5989 6.0042 0.01164 -2e-06 0 -3.12341</pose>
+          <velocity>-1.3e-05 2.2e-05 5e-06 1e-06 -0 9e-06</velocity>
+          <acceleration>0 -0 -0 3e-06 -0 0</acceleration>
+          <wrench>1.4e-05 -6.1e-05 -1e-06 0 -0 0</wrench>
+        </link>
+        <link name='front_left_wheel'>
+          <pose>12.8133 7.40015 0.31165 0.009055 0.011976 -2.98609</pose>
+          <velocity>-2.5e-05 1.5e-05 1.7e-05 -4.8e-05 -8e-05 0.000834</velocity>
+          <acceleration>-0 -0 0 0 -0 0</acceleration>
+          <wrench>-0 -1e-06 0 0 -0 0</wrench>
+        </link>
+        <link name='front_right_wheel'>
+          <pose>14.3331 7.42778 0.31165 0.015714 0.011448 -2.99218</pose>
+          <velocity>-2.5e-05 2.8e-05 1.7e-05 -8.9e-05 -8.1e-05 0.000774</velocity>
+          <acceleration>-0 -0 -0 0 -0 0</acceleration>
+          <wrench>-0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='rear_axle'>
+          <pose>13.6252 4.55444 0.311636 -2e-06 -6e-06 -3.12341</pose>
+          <velocity>-1e-06 2.2e-05 3e-06 1e-06 4e-06 9e-06</velocity>
+          <acceleration>0 -0 -0 0.026715 0.000477 0</acceleration>
+          <wrench>1e-06 -1e-06 -0 0 -0 0</wrench>
+        </link>
+        <link name='rear_left_wheel'>
+          <pose>12.8394 4.54014 0.31165 0.008091 8e-06 -3.12341</pose>
+          <velocity>-0 1.5e-05 1.3e-05 -4.9e-05 0 9e-06</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -1e-06 -0 0 -0 0</wrench>
+        </link>
+        <link name='rear_right_wheel'>
+          <pose>14.4111 4.56873 0.31165 0.015025 2e-06 -3.12341</pose>
+          <velocity>-1e-06 2.9e-05 1.3e-05 -9.2e-05 -5e-06 9e-06</velocity>
+          <acceleration>0 -0 -0 0 -0 0</acceleration>
+          <wrench>0 -0 -0 0 -0 0</wrench>
+        </link>
+        <link name='steering_wheel'>
+          <pose>13.2316 6.62496 0.997964 -0.322079 1.28706 -1.88706</pose>
+          <velocity>-1.5e-05 1.8e-05 5e-06 3.1e-05 -0.001678 0.000471</velocity>
+          <acceleration>-0 -0 0 4e-05 -0.002178 7.3e-05</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -3389,12 +3389,12 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>11.1911 -4.59062 8.19266 0 0.577797 1.67532</pose>
+        <pose>1.78286 -16.3239 25.5069 0 0.743643 0.972193</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='green_marker'>
+    <model name='park_marker'>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -3416,7 +3416,7 @@
         <visual name='visual'>
           <geometry>
             <sphere>
-              <radius>0.08</radius>
+              <radius>0.061</radius>
             </sphere>
           </geometry>
           <material>
@@ -3429,7 +3429,7 @@
             </shader>
             <ambient>0 1 0 1</ambient>
             <diffuse>0 1 0 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+            <specular>0.1 0.1 0.1 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
@@ -3442,7 +3442,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <sphere>
-              <radius>0.04</radius>
+              <radius>0.03</radius>
             </sphere>
           </geometry>
           <surface>
@@ -3494,7 +3494,7 @@
       </link>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>10.5834 6.50465 0 0 -0 0</pose>
+      <pose>11.0617 8.57968 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
