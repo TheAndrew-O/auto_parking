@@ -13,6 +13,7 @@ class DetectLine(Node):
         self.image_sub = self.create_subscription(Image,"/front_camera_sensor/image_raw",self.callback,rclpy.qos.QoSPresetProfiles.SENSOR_DATA.value)
         self.left_image = self.create_subscription(Image,"/left_camera_sensor/image_raw",self.turn_callback,rclpy.qos.QoSPresetProfiles.SENSOR_DATA.value)
         #self.right_image = self.create_subscription(Image,"/right_camera_sensor/image_raw",self.callback,rclpy.qos.QoSPresetProfiles.SENSOR_DATA.value)
+        #self.back_image = self.create_subscription(Image,"/back_camera_sensor/image_raw",self.callback,rclpy.qos.QoSPresetProfiles.SENSOR_DATA.value)
         self.image_out_pub = self.create_publisher(Image, "/image_out", 1)
         self.image_tuning_pub = self.create_publisher(Image, "/image_tuning", 1)
         self.left_image_out = self.create_publisher(Image, "/left_image_out", 1)
@@ -86,7 +87,6 @@ class DetectLine(Node):
             cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
         except CvBridgeError as e:
             print(e)
-
         try:
             if (self.tuning_mode):
                 self.tuning_params = proc.get_tuning_params()
@@ -104,7 +104,7 @@ class DetectLine(Node):
                     x = line.pt[0]
                     y = line.pt[1]
                     size = line.size
-                    self.get_logger().info(f"Pt: ({x},{y},{size})")
+                    # self.get_logger().info(f"Pt: ({x},{y},{size})")
                     if(size > point.z):
                         point.x = float(x)
                         point.y = float(y)
@@ -113,7 +113,7 @@ class DetectLine(Node):
                     self.line_pub.publish(point)
         except CvBridgeError as e:
             print(e)
-
+    # Send message to turn car
     def turn_callback(self, data):
         try:
             cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
@@ -124,7 +124,6 @@ class DetectLine(Node):
             if (self.tuning_mode):
                 self.tuning_params = proc.get_tuning_params()
             lines, out_image, tuning_image = proc.find_lines(cv_image, self.tuning_params2)
-
             img_to_pub = self.bridge.cv2_to_imgmsg(out_image, "bgr8")
             img_to_pub.header = data.header
             self.left_image_out.publish(img_to_pub)
@@ -137,12 +136,13 @@ class DetectLine(Node):
                     x = line.pt[0]
                     y = line.pt[1]
                     size = line.size
-                    self.get_logger().info(f"Pt: ({x},{y},{size})")
+                    # self.get_logger().info(f"Pt: ({x},{y},{size})")
                     if(size > point.z):
                         point.x = float(x)
                         point.y = float(y)
                         point.z = float(size)
                 msg = String()
+                # elif(point.z < 0): msg.data = 'right'
                 if(point.z > 0):
                     msg.data = 'left'
                     self.turn_left_pub.publish(msg)

@@ -18,20 +18,20 @@ class FollowLine(Node):
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         self.steer_pub = self.create_publisher(JointTrajectory, '/joint_trajectory_controller/joint_trajectory',10)
         
-        self.declare_parameter("rcv_timeout_secs", 1.0)
-        self.declare_parameter("angular_chase_multiplier", 0.1)
-        self.declare_parameter("forward_chase_speed", 0.4)
-        self.declare_parameter("search_angular_speed", 0.5)
-        self.declare_parameter("max_size_thresh", 0.458)
-        self.declare_parameter("filter_value", 0.9)
+        self.declare_parameter("wait_time_sec", 1.0)
+        self.declare_parameter("turn_scalar", 0.1)
+        self.declare_parameter("forward_speed", 0.4)
+        self.declare_parameter("turn_vel", 0.5)
+        self.declare_parameter("max_dist_threshold", 0.458)
+        self.declare_parameter("vel_scalar", 0.9)
 
 
-        self.rcv_timeout_secs = self.get_parameter('rcv_timeout_secs').get_parameter_value().double_value
-        self.angular_chase_multiplier = self.get_parameter('angular_chase_multiplier').get_parameter_value().double_value
-        self.forward_chase_speed = self.get_parameter('forward_chase_speed').get_parameter_value().double_value
-        self.search_angular_speed = self.get_parameter('search_angular_speed').get_parameter_value().double_value
-        self.max_size_thresh = self.get_parameter('max_size_thresh').get_parameter_value().double_value
-        self.filter_value = self.get_parameter('filter_value').get_parameter_value().double_value
+        self.wait_time_sec = self.get_parameter('wait_time_sec').get_parameter_value().double_value
+        self.turn_scalar = self.get_parameter('turn_scalar').get_parameter_value().double_value
+        self.forward_speed = self.get_parameter('forward_speed').get_parameter_value().double_value
+        self.turn_vel = self.get_parameter('turn_vel').get_parameter_value().double_value
+        self.max_dist_threshold = self.get_parameter('max_dist_threshold').get_parameter_value().double_value
+        self.vel_scalar = self.get_parameter('vel_scalar').get_parameter_value().double_value
 
 
         timer_period = 0.1  # seconds
@@ -53,24 +53,24 @@ class FollowLine(Node):
         
         #steer.points.append(point)
         #self.steer_pub.publish(steer)
-
+        # FORWARD SEEKING CONDITION
         if(self.turn == False):
-            if (time.time() - self.lastrcvtime < self.rcv_timeout_secs):
+            if (time.time() - self.lastrcvtime < self.wait_time_sec):
                 self.get_logger().info('Target: {}'.format(self.target_val))
                 print("dist:",self.target_dist)
-                if (self.target_dist < self.max_size_thresh):
-                    print("forward")
+                if (self.target_dist < self.max_dist_threshold):
+                    #print("forward")
                     self.counter = self.counter + 1
                     msg.linear.x = 0.32
-                #msg.angular.z = -self.angular_chase_multiplier*self.target_val
-                center_point = -self.angular_chase_multiplier*self.target_val
+                #msg.angular.z = -self.turn_scalar*self.target_val
+                center_point = -self.turn_scalar*self.target_val
                 point.positions = [center_point, center_point]
                 point.time_from_start.sec = 1
                 steer.points.append(point)
                 self.steer_pub.publish(steer)
             else:
                 self.get_logger().info('Target lost')
-                msg.linear.x = self.forward_chase_speed
+                msg.linear.x = self.forward_speed
                 point.positions=[0.0,0.0]
                 point.time_from_start.sec = 1
                 steer.points.append(point)
@@ -78,8 +78,11 @@ class FollowLine(Node):
             self.publisher_.publish(msg)
         else:
             pass
-    
+        
+    # TODO: ADD CONDITION FOR IF msg.data == 'right' (right perpendicular parking) steer right pos = [-0.8727,-0.8727]
+    # TODO: ADD CONDITION FOR IF msg.data == 'back' (reverse perpendicular parking)
     def turn_left_callback(self, msg):
+        #ignore left_cam if front cam can see target
         if(self.counter < 5):
             turn = msg.data
             cmd = Twist()
@@ -113,11 +116,11 @@ class FollowLine(Node):
                 #self.steer_pub.publish(steer)
             self.publisher_.publish(cmd)
 
-
+    # Calc angle to goal point
     def listener_callback(self, msg):
-        f = self.filter_value
-        self.target_val = self.target_val * f + msg.x
-        self.target_dist = self.target_dist * f + msg.z
+        scalar = self.vel_scalar
+        self.target_val = (self.target_val * scalar) + msg.x
+        self.target_dist = (self.target_dist * scalar) + msg.z
         self.lastrcvtime = time.time()
         # self.get_logger().info('Received: {} {}'.format(msg.x, msg.y))
 
