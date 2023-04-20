@@ -124,7 +124,7 @@
     <child link="fl_axle"/>
     <origin xyz="0.8 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="100.0" velocity="10.0" lower="-0.8727" upper="0.8727"/>
+    <limit effort="100.0" velocity="10.0" lower="-0.8728" upper="0.8728"/>
   </joint>
 
   <!-- front right_wheel -->
@@ -169,7 +169,7 @@
     <child link="fr_axle"/>
     <origin xyz="-0.8 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="100.0" velocity="10.0" lower="-0.8727" upper="0.8727"/>
+    <limit effort="100.0" velocity="10.0" lower="-0.8728" upper="0.8728"/>
   </joint>
 
   <!-- rear left_wheel -->

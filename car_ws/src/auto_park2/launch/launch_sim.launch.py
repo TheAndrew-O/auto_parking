@@ -38,11 +38,18 @@ def generate_launch_description():
         arguments=["joint_state_broadcaster"],
     )
 
+    joint_trajectory_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["joint_trajectory_controller"],
+    )
+
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
         diff_drive_spawner,
-        joint_broad_spawner
+        joint_broad_spawner,
+        joint_trajectory_spawner
     ])
