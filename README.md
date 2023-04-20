@@ -9,7 +9,8 @@ Make sure you are in the directory where the Dockerfile is located.
 docker build -t user/ros2-desktop-vnc:foxy .
 ```
 `user/ros2-desktop-vnc:foxy` will be the tag for the image.
-
+<br>
+_If the build fails, try running it again. This issue sometimes occurs, but is fixed by the second build._
 ## Create/Run Docker Container
 The following command will create/start the docker container.
 ```
