@@ -14,6 +14,7 @@ class FollowLine(Node):
     def __init__(self):
         super().__init__('follow_line')
         self.subscription = self.create_subscription(String, '/turn_left', self.turn_left_callback, 10)
+        self.subscription = self.create_subscription(String, '/turn_right', self.turn_right_callback, 10)
         self.subscription = self.create_subscription(Point,'/detected_lines',self.listener_callback,10)
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         self.steer_pub = self.create_publisher(JointTrajectory, '/joint_trajectory_controller/joint_trajectory',10)
@@ -22,7 +23,7 @@ class FollowLine(Node):
         self.declare_parameter("turn_scalar", 0.1)
         self.declare_parameter("forward_speed", 0.4)
         self.declare_parameter("turn_vel", 0.5)
-        self.declare_parameter("max_dist_threshold", 0.458)
+        self.declare_parameter("max_dist_threshold", 0.46)
         self.declare_parameter("vel_scalar", 0.9)
 
 
@@ -41,7 +42,8 @@ class FollowLine(Node):
         self.counter = 0
         self.lastrcvtime = time.time() - 10000
         self.turn = False
-
+        self.right = False
+        self.left = False
     def timer_callback(self):
         msg = Twist()
         steer = JointTrajectory()
@@ -92,29 +94,51 @@ class FollowLine(Node):
             forward = [0.0,0.0]
             if(msg.data == 'left'):
                 self.turn = True
+                self.left = True
+                self.right = False
                 print("see left")
                 cmd.linear.x = 0.35
                 point.positions=[0.8727,0.8727]
                 point.time_from_start.sec = 1
                 steer.points.append(point)
                 self.steer_pub.publish(steer)
+                self.publisher_.publish(cmd)
                 #cmd.linear.x = 0.08
-            elif(msg.data == 'noturn'):
-                print("no left")
+            elif(msg.data == 'noturn' and self.right == False):
                 self.turn = False
-                cmd.linear.x = 0.32
-                point.positions = forward
-                point.time_from_start.sec = 1
-                steer.points.append(point)
-                #self.steer_pub.publish(steer)
+                self.left = False
+                self.right = False
             else:
-                self.turn = False
                 cmd.linear.x = 0.32
-                point.positions = forward
+
+    def turn_right_callback(self, msg):
+        #ignore left_cam if front cam can see target
+        if(self.counter < 5):
+            turn = msg.data
+            cmd = Twist()
+            steer = JointTrajectory()
+            steer.joint_names = ['front_left_steer_joint', 'front_right_steer_joint']
+            point = JointTrajectoryPoint()
+            forward = [0.0,0.0]
+            if(msg.data == 'right'):
+                self.turn = True
+                self.right = True
+                self.left = False
+                print("see right")
+                cmd.linear.x = 0.35
+                point.positions=[-0.8727,-0.8727]
                 point.time_from_start.sec = 1
                 steer.points.append(point)
-                #self.steer_pub.publish(steer)
-            self.publisher_.publish(cmd)
+                self.steer_pub.publish(steer)
+                self.publisher_.publish(cmd)
+                #cmd.linear.x = 0.08
+            elif(msg.data == 'noturn' and self.left == False):
+                self.turn = False
+                self.left = False
+                self.right = False
+            else:
+                cmd.linear.x = 0.32
+
 
     # Calc angle to goal point
     def listener_callback(self, msg):
