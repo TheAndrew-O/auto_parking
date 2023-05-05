@@ -25,9 +25,9 @@
     </visual>
 
     <collision name="chassis">
-      <origin xyz="0.0 0.05 0.625" rpy="0 0 0"/>
+      <origin xyz="0.0 0.05 0.425" rpy="0 0 0"/>
       <geometry>
-        <box size="1.4 1.2 0.75"/>
+        <box size="1.4 1.4 0.35"/>
       </geometry>
     </collision>
 
@@ -247,7 +247,7 @@
   <joint name="scan_joint" type="fixed">
     <parent link="front_camera_link"/>
     <child link="base_scan"/>
-    <origin xyz="0.53 0.0 -0.3" rpy="0 0 0"/>
+    <origin xyz="0.13 0.0 0.3" rpy="0 0 0"/>
   </joint>
 
   <!-- front camera -->
@@ -491,15 +491,15 @@
     <material>Gazebo/FlatBlack</material>
     <sensor type="ray" name="lds_lfcd_sensor">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
+      <visualize>true</visualize>
       <update_rate>10</update_rate>
       <ray>
         <scan>
           <horizontal>
             <samples>360</samples>
             <resolution>1</resolution>
-            <min_angle>-1.72</min_angle>
-            <max_angle>1.72</max_angle>
+            <min_angle>-2.0</min_angle>
+            <max_angle>2.0</max_angle>
           </horizontal>
         </scan>
         <range>

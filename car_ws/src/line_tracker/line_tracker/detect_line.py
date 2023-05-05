@@ -4,7 +4,7 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import Point
 from std_msgs.msg import String
 from cv_bridge import CvBridge, CvBridgeError
-import line_tracker.image_process as proc
+import line_tracker.image_process as imgProc
 
 class DetectLine(Node):
     def __init__(self):
@@ -96,7 +96,7 @@ class DetectLine(Node):
         self.bridge = CvBridge()
 
         if(self.tuning_mode):
-            proc.create_tuning_window(self.tuning_params)
+            imgProc.create_tuning_window(self.tuning_params)
 
     def callback(self,data):
         try:
@@ -105,8 +105,8 @@ class DetectLine(Node):
             print(e)
         try:
             if (self.tuning_mode):
-                self.tuning_params = proc.get_tuning_params()
-            lines, out_image, tuning_image = proc.find_lines(cv_image, self.tuning_params)
+                self.tuning_params = imgProc.get_tuning_params()
+            lines, out_image, tuning_image = imgProc.find_lines(cv_image, self.tuning_params)
             
             img_to_pub = self.bridge.cv2_to_imgmsg(out_image, "bgr8")
             img_to_pub.header = data.header
@@ -138,8 +138,8 @@ class DetectLine(Node):
 
         try:
             if (self.tuning_mode):
-                self.tuning_params = proc.get_tuning_params()
-            lines, out_image, tuning_image = proc.find_lines(cv_image, self.tuning_params2)
+                self.tuning_params = imgProc.get_tuning_params()
+            lines, out_image, tuning_image = imgProc.find_lines(cv_image, self.tuning_params2)
             img_to_pub = self.bridge.cv2_to_imgmsg(out_image, "bgr8")
             img_to_pub.header = data.header
             self.left_image_out.publish(img_to_pub)
@@ -152,7 +152,7 @@ class DetectLine(Node):
                     x = line.pt[0]
                     y = line.pt[1]
                     size = line.size
-                    # self.get_logger().info(f"Pt: ({x},{y},{size})")
+
                     if(size > point.z):
                         point.x = float(x)
                         point.y = float(y)
@@ -178,8 +178,8 @@ class DetectLine(Node):
 
         try:
             if (self.tuning_mode):
-                self.tuning_params = proc.get_tuning_params()
-            lines, out_image, tuning_image = proc.find_lines(cv_image, self.tuning_params3)
+                self.tuning_params = imgProc.get_tuning_params()
+            lines, out_image, tuning_image = imgProc.find_lines(cv_image, self.tuning_params3)
             img_to_pub = self.bridge.cv2_to_imgmsg(out_image, "bgr8")
             img_to_pub.header = data.header
             self.right_image_out.publish(img_to_pub)
@@ -192,7 +192,7 @@ class DetectLine(Node):
                     x = line.pt[0]
                     y = line.pt[1]
                     size = line.size
-                    # self.get_logger().info(f"Pt: ({x},{y},{size})")
+                    
                     if(size > point.z):
                         point.x = float(x)
                         point.y = float(y)
@@ -211,14 +211,11 @@ class DetectLine(Node):
             print(e)
 
 def main(args=None):
-
     rclpy.init(args=args)
-
     detect_line = DetectLine()
     while rclpy.ok():
         rclpy.spin_once(detect_line)
-        proc.wait_on_gui()
-
+        imgProc.wait_on_gui()
     detect_line.destroy_node()
     rclpy.shutdown()
 

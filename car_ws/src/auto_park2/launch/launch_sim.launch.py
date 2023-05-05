@@ -7,13 +7,10 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-
     package_name='auto_park2'
 
     rsp = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(package_name),'launch','rsp.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
+                PythonLaunchDescriptionSource([os.path.join(get_package_share_directory(package_name),'launch','rsp.launch.py')]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
     gazebo = IncludeLaunchDescription(
@@ -21,10 +18,7 @@ def generate_launch_description():
                     get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
              )
 
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
-                        output='screen')
+    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',arguments=['-topic', 'robot_description','-entity', 'auto_bot'],output='screen')
     
     diff_drive_spawner = Node(
         package="controller_manager",
