@@ -45,3 +45,11 @@ Then, in another terminal run the following command to launch the car navigation
 ```
 ros2 run line_tracker follow_line
 ```
+
+## TROUBLESHOOTING
+When running the command:
+```
+ros2 launch auto_park2 launch_sim.launch.py world:=./src/auto_park2/worlds/parking_lot_right.world
+```
+for the first time, it will not properly load the controllers.<br>
+To fix this, when running the command for the first time, let it load the environment in Gazebo, then close it and rerun the previous command. If the controllers are properlly loaded, the terminal will show the controller names highlighted in blue and green.
