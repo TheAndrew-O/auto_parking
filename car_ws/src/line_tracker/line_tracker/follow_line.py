@@ -18,7 +18,7 @@ class FollowLine(Node):
         self.subscription = self.create_subscription(String, '/turn_right', self.turn_right_callback, 10)
         self.subscription = self.create_subscription(Point,'/detected_lines',self.listener_callback,10)
         self.subscription = self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
-        self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.publisher_ = self.create_publisher(Twist, '/diff_drive_controller/cmd_vel_unstamped', 10)
         self.steer_pub = self.create_publisher(JointTrajectory, '/joint_trajectory_controller/joint_trajectory',10)
         
         self.declare_parameter("wait_time_sec", 1.0)
@@ -63,24 +63,33 @@ class FollowLine(Node):
         point = JointTrajectoryPoint()
         #print(self.front_min_distance)
         if(self.seeking == False):
-            print("right:",self.right_min_distance, "left:",self.left_min_distance,"front:",self.front_min_distance)
+            #print("right:",self.right_min_distance, "left:",self.left_min_distance,"front:",self.front_min_distance)
             self.adjusting=True
-            if(self.front_min_distance < 0.77):
+            adjustment = -1 * (self.right_min_distance - self.left_min_distance)
+            if(self.front_min_distance < 0.78):
                 self.get_logger().info('Parked')
                 self.destroy_node()
                 rclpy.shutdown()
-            elif(self.right_min_distance < 1.39):
+            elif(self.right_min_distance < 1.4 and self.left_min_distance < 1.4):
+                print("adjust center")
+                point.positions=[adjustment,adjustment]
+                point.time_from_start.sec = 1
+                cmd.linear.x = 0.22
+                steer.points.append(point)
+                self.steer_pub.publish(steer)
+                self.publisher_.publish(cmd)
+            elif(self.right_min_distance < 1.4):
                 print("adjust left")
-                turn_rate = self.right_min_distance + 0.25
+                #turn_rate = self.right_min_distance + 0.25
                 point.positions=[0.45,0.45]
                 point.time_from_start.sec = 1
                 cmd.linear.x = 0.22
                 steer.points.append(point)
                 self.steer_pub.publish(steer)
                 self.publisher_.publish(cmd)
-            elif(self.left_min_distance < 1.25):
+            elif(self.left_min_distance < 1.15):
                 print("adjust right")
-                turn_rate = -1 * (self.left_min_distance + 0.25)
+                #turn_rate = -1 * (self.left_min_distance + 0.25)
                 point.positions=[-0.45,-0.45]
                 point.time_from_start.sec = 1
                 cmd.linear.x = 0.22
@@ -115,7 +124,7 @@ class FollowLine(Node):
                     msg.linear.x = 0.32
                 #msg.angular.z = -self.turn_scalar*self.target_val
                 if(self.adjusting == False):
-                    print("seeking")
+                    #print("seeking")
                     center_point = -self.turn_scalar*self.target_val
                     point.positions = [center_point, center_point]
                     point.time_from_start.sec = 1
@@ -148,7 +157,7 @@ class FollowLine(Node):
                 self.turn = True
                 self.left = True
                 self.right = False
-                print("see left")
+                #print("see left")
                 cmd.linear.x = 0.35
                 point.positions=[0.8727,0.8727]
                 point.time_from_start.sec = 1
@@ -176,7 +185,7 @@ class FollowLine(Node):
                 self.turn = True
                 self.right = True
                 self.left = False
-                print("see right")
+                #print("see right")
                 cmd.linear.x = 0.35
                 point.positions=[-0.8727,-0.8727]
                 point.time_from_start.sec = 1

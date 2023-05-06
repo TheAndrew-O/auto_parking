@@ -59,3 +59,8 @@ RUN gosu ubuntu rosdep update && \
 RUN sed -i "s#location ~ .*/(api/.*|websockify) {#location ~ .*/(api/.*|websockify|resize) {#" /etc/nginx/sites-enabled/default
 
 ENV USER ubuntu
+
+COPY setup_script.sh /setup_script.sh
+RUN chmod +x /setup_script.sh
+RUN /setup_script.sh
+
